@@ -69,12 +69,11 @@
                                 (我们有很多个App，代码是类似的一套)
                             </p>
                             <p><strong>1.</strong> 该项目使用AngularJS和ionic框架进行开发，通过gulp构建，将vendor与业务代码分离，build后关乎业务的app.js大小在200k左右，
-                                客户端打包时将该资源链接到远程CDN上，绕开了AppStore审核实现了热更新。这样在发布、改版、修复bug时有了极大的控制权，业务上意义重大。和React Native
-                                的hot load方式不同，因为JS的更新不会改变native组件，该更新方式是符合Apple条款的。
+                                客户端打包时将该资源链接到CDN上，绕开了AppStore审核实现了热更新。这样在发布、改版、bug fixes时有了极大的控制权，业务上意义重大。
                             </p>
                             <p><strong>2.</strong> 这个App属于旧项目与新项目（贷款）的合并，代码量极大，前端处理逻辑非常复杂，我们对原有架构进行了一些改进，整个架构变的现代化了一些，将每个页面的controller
                                 、template、style存放在独立的文件夹里，看起来像Vue里一个较大的容器组件，代码结构清晰许多；增加了babel来支持ES6，前端敏感信息通过rsa进行加密传输。整体项目使用了
-                                AngularJS+ES6+SCSS+GULP这样的技术架构。
+                                AngularJS+ES6+Scss+Gulp这样的技术架构。
                             </p>
                         </li>
                         <li>
@@ -86,9 +85,9 @@
                                 该项目配置了tslint和codelyzer进行代码风格检查，保证代码风格和组件命名的统一规范，使用webpack-bundle-analyzer分析bundle，按需加载module，减少了bundle大小，
                                 开启gzip后venor大小仅288k，此外还配置了一些文档的自动生成工具。
                             </p>
-                            <p><strong>2.</strong> 整体项目使用Angular4+TypeScript+Scss+Webpack这样技术架构，UI框架分别使用了Angular Material和Boostrap。在技术选型时特别对比了Vue的情况，但最终选择了Angular，Angular更好的与TypeScript结合，
-                                带来了静态类型和更强大的IDE检查，减少了许多运行时错误和隐藏的类型坑，TypeScript也带来了更多的代码提示；Angular的依赖注入使项目结构和分层更加清晰合理，通过依赖注入文件较好的遵循了单一职责原则，每个文件代码行数得到控制，在应用复杂时
-                                显得尤为重要。另外RxJs在处理异步数据时显的十分优雅，但是难度较高。
+                            <p><strong>2.</strong> 整体项目使用Angular4+TypeScript+Scss+Webpack这样技术架构，UI框架分别使用了Angular Material和Boostrap。在技术选型时特别对比了Vue的情况，但最终选择了Angular。原因是后台类应用往往请求多、逻辑复杂，Angular更好的与TypeScript结合，
+                                带来了静态类型和更多的代码提示，减少了许多运行时错误和隐藏的类型坑；依赖注入使项目结构和分层更加清晰合理，文件较好的遵循了单一职责原则，每个文件代码行数得到控制。Angular有NgModule这样的概念，支持模块级别的lazy load，可以将多个组件归类在一起，更大范围的模块化为复杂应用带来了显著的好处。
+                                Angular和RxJs的结合让它在处理异步数据时显的十分优雅，但是rxjs库难度较高，可以使用toPromise方法转化到我们熟悉的Promise，也可以直接subscribe订阅数据后赋值。以上我认为是Angular在大型复杂应用上相比Vue的优势。
                             </p>
                         </li>
                         <li>
@@ -189,7 +188,7 @@
                         <li>
                             <p>团队为先：坚持代码可读性可维护性第一，不炫技、不盲目追新。</p>
                             <p>责任心：对代码负责、对业务负责，遇到问题跟踪解决问题而不是借口不是我的工作不关心。</p>
-                            <p>热情：保持前沿的技术栈，不断改进完善代码。</p>
+                            <p>技术热情：不断学习保持前沿的技术栈，从编程中获取成就感并激励自己。</p>
                         </li>
                     </ul>
                 </li>
